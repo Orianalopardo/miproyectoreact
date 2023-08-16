@@ -3,7 +3,7 @@ import "./ItemListContainer.css"
 import ItemList from "../ItemList/ItemList"
 import ItemCount from "../ItemCount/ItemCount"
 import {useParams} from "react-router-dom"
-import products from './data.json';
+import data from '../../data.json';
 
 const ItemListContainer = () => {
   const {CategoryName} = useParams()
@@ -11,7 +11,7 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    const productosFiltered = products.filter(
+    const productosFiltered = data.filter(
       (productos) => productos.category === CategoryName
     )
 
