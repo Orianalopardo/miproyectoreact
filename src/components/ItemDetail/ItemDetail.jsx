@@ -1,12 +1,9 @@
-import React from 'react';
-import ItemDetail from './ItemDetail';
+import React from 'react'
 
-const App = () => {
+const ItemDetail = () => {
     return (
-        <div className="app">
-            <h1>soy itemdetail</h1>
-        </div>
-    );
+    <div>ItemDetail</div>
+    )
 }
 
-export default ItemDetail;
+export default ItemDetail

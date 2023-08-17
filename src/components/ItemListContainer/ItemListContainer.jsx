@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import "./ItemListContainer.css"
-import ItemList from "../ItemList/ItemList"
+// import ItemList from "../ItemList/ItemList"
 import ItemCount from "../ItemCount/ItemCount"
 import {useParams} from "react-router-dom"
 import data from '../../data.json';
@@ -8,7 +8,7 @@ import data from '../../data.json';
 const ItemListContainer = () => {
   const {CategoryName} = useParams()
 
-  const [items, setItems] = useState([])
+  // const [items, setItems] = useState([])
 
   useEffect(() => {
     const productosFiltered = data.filter(
@@ -23,7 +23,7 @@ const ItemListContainer = () => {
 
     task
       .then((res) => {
-        setItems(res)
+        // setItems(res)
       })
       .catch((err) => {
         console.log("se rechazo")
@@ -34,7 +34,7 @@ const ItemListContainer = () => {
   return (
     <div className="light">
       <ItemCount initial={1} stock={7} />
-      <ItemList items={items} />
+      { /* <ItemList items={items} /> */ }
     </div>
   )
 }
