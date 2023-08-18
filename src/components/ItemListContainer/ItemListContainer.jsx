@@ -3,7 +3,7 @@ import "./ItemListContainer.css"
 // import ItemList from "../ItemList/ItemList"
 import ItemCount from "../ItemCount/ItemCount"
 import {useParams} from "react-router-dom"
-import data from '../../data.json';
+import data from '../../data.json';                     
 
 const ItemListContainer = () => {
   const {CategoryName} = useParams()
