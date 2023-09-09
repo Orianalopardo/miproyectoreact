@@ -1,10 +1,10 @@
 import React, { useEffect, useContext } from "react";
-import CartContext from "../../contexts/cartContext";
-import "./Table.scss";
+import cartContext from "../Contexts/cartContext";
+import "./Table.css";
 
 const Table = () => {
-  const { cart, setCart, setQnt } = useContext(CartContext);
-  
+  const { cart, setCart, setQnt } = useContext(cartContext);
+
   const deleteProduct = (index) => {
     setCart(cart.filter((product, i) => i !== index));
   };

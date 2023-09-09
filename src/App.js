@@ -10,7 +10,7 @@ import Home from "./Pages/Home/";
 import Cart from "./Pages/Cart/Cart";
 import Categories from "./Pages/Categories";
 import Form from "./Pages/Form/";
-import CartContext from "./Contexts/cartContext";
+import cartContext from "./Contexts/cartContext";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div>
-      <CartContext.Provider value={{ cart, setCart, qnt, setQnt }}>
+      <cartContext.Provider value={{ cart, setCart, qnt, setQnt }}>
         <Router> 
           <CssBaseline>
             <Navbar />
@@ -44,7 +44,7 @@ function App() {
             <Footer />
           </CssBaseline>
         </Router> 
-      </CartContext.Provider>
+      </cartContext.Provider>
     </div>
   );
 }

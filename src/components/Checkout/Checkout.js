@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import CartContext from "../../contexts/cartContext";
+import cartContext from "../../Contexts/cartContext";
 
-import "./Checkout.scss";
+import "./Checkout.css";
 
 const Checkout = () => {
   const [totalPrice, setTotalPrice] = useState(0);
-  const { cart } = useContext(CartContext);
+  const { cart } = useContext(cartContext);
 
   useEffect(() => {
     if (cart.length > 0) {
