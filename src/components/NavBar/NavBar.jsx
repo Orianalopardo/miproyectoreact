@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 import CartIcon from "../CartIcon/CartIcon";
 import { Images } from "../../utils/images.js";
 
-import "./Navbar.scss";
+import "./NavBar.scss";
 
 const Navbar = () => {
-  return (
+return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <Link className="navbar-brand" to="/">
+    <Link className="navbar-brand" to="/">
         <img src={Images.Logo} alt="" />
-      </Link>
-      <div className="icon navbar-nav ">
+    </Link>
+    <div className="icon navbar-nav ">
         <li>
-          <Link className="nav-link" to="/cart">
+        <Link className="nav-link" to="/cart">
             <CartIcon />
-          </Link>
+        </Link>
         </li>
-      </div>
-      <button
+    </div>
+    <button
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -26,30 +26,30 @@ const Navbar = () => {
         aria-controls="navbarNavDropdown"
         aria-expanded="false"
         aria-label="Toggle navigation"
-      >
+    >
         <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavDropdown">
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item active">
+        <li className="nav-item active">
             <Link className="nav-link" to="/">
-              Inicio <span className="sr-only">(current)</span>
+            Inicio <span className="sr-only">(current)</span>
             </Link>
-          </li>
-          <li className="nav-item">
+        </li>
+        <li className="nav-item">
             <Link className="nav-link" to="/">
-              Productos
+            Productos
             </Link>
-          </li>
-          <li>
+        </li>
+        <li>
             <Link className="nav-link" to="/cart">
-              <CartIcon />
+            <CartIcon />
             </Link>
-          </li>
+        </li>
         </ul>
-      </div>
+    </div>
     </nav>
-  );
+);
 };
 
 export default Navbar;

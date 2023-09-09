@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import Navbar from "./components/Navbar/";
-import Footer from "./components/Footer/Footer";
+import Navbar from "./components/NavBar/";
+import Footer from "./components/Footer";
 import Home from "./pages/Home/";
 import Cart from "./pages/Cart/Cart";
 import Categories from "./pages/Categories";
