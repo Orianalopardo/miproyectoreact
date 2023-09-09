@@ -1,29 +1,55 @@
-import "./NavBar.css";
-import { CartWidget } from "../CartWidget/CartWidget";
-import {Link} from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
+import CartIcon from "../CartIcon/CartIcon";
+import { Images } from "../../utils/images.js";
 
-const NavBar = () => {
+import "./Navbar.scss";
 
-    return (
-        <div className="navbar-container">
-            <div className="container-logo">
-                <Link to="/">
-                <img 
-                className="logo-navbar" 
-                src="https://res.cloudinary.com/dofqoorbp/image/upload/v1669497981/logo_c7nlxd.png" 
-                alt="" 
-                />
-                </Link>
-            </div>
-            <ul className="navbar">
-                <Link className="navbar-item" to="/">Todos los productos</Link>
-                <Link className="navbar-item" to="/Category/Cerveza">Cerveza</Link>
-                <Link className="navbar-item" to="/Category/Vodka">Vodka</Link>
-                <Link className="navbar-item" to="/Category/Aperitivo">Aperitivos</Link>
-            </ul>
-            <CartWidget/>
-        </div>
-    )
-}
+const Navbar = () => {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <Link className="navbar-brand" to="/">
+        <img src={Images.Logo} alt="" />
+      </Link>
+      <div className="icon navbar-nav ">
+        <li>
+          <Link className="nav-link" to="/cart">
+            <CartIcon />
+          </Link>
+        </li>
+      </div>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item active">
+            <Link className="nav-link" to="/">
+              Inicio <span className="sr-only">(current)</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/">
+              Productos
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="/cart">
+              <CartIcon />
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
 
-export default NavBar;
+export default Navbar;

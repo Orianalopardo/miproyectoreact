@@ -1,30 +1,45 @@
-import { useState } from "react"
+import React, { useState, useEffect } from "react";
+import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@material-ui/icons/Add";
 
-const ItemCount = ({ stock, initial = 1, onAdd }) => {
+import "./ItemCount.scss";
 
-  const [counter, setCounter] = useState(initial)
+const ItemCount = ({ initial, min, max, setQuantity }) => {
+  const [counter, setCounter] = useState(initial);
 
-  const increment = () => {
-    if (counter < stock) {
-      setCounter(counter + 1)
-    }
-  }
+  const handleIncrement = () => {
+    counter < max ? setCounter(counter + 1) : console.log("Máximo alcanzado");
+  };
 
-  const decrement = () => {
-    if (counter > initial) {
-      setCounter(counter - 1)
-    }
-  }
+  const handleDecrement = () => {
+    counter > min ? setCounter(counter - 1) : console.log("Mínimo alcanzado");
+  };
+
+  useEffect(() => {
+    setQuantity(counter);
+  }, [counter, setQuantity]);
 
   return (
-    <div>
-      <h2>{counter}</h2>
-
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
-      <button onClick={() => onAdd(counter)}>Agregar al carrito</button>
+    <div className="counter" style={{ width: "15rem" }}>
+      <div className="counter__content">
+        <div className="counter__content-controls">
+          <span
+            className="counter__content-controls-subtract"
+            onClick={handleDecrement}
+          >
+            <RemoveIcon />
+          </span>
+          <span className="counter__content-controls-value"> {counter} </span>
+          <span
+            className="counter__content-controls-add"
+            onClick={handleIncrement}
+          >
+            <AddIcon />
+          </span>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ItemCount
+export default ItemCount;
