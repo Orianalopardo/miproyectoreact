@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 
 import Navbar from "./components/NavBar/";
 import Footer from "./components/Footer";
-import Home from "./pages/Home/";
-import Cart from "./pages/Cart/Cart";
-import Categories from "./pages/Categories";
-import Form from "./pages/Form/";
-import CartContext from "./contexts/cartContext";
+import Home from "./Pages/Home/";
+import Cart from "./Pages/Cart/Cart";
+import Categories from "./Pages/Categories";
+import Form from "./Pages/Form/";
+import CartContext from "./Contexts/cartContext";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <CartContext.Provider value={{ cart, setCart, qnt, setQnt }}>
-        <Router>
+        <Router> 
           <CssBaseline>
             <Navbar />
             <Switch>
@@ -32,7 +32,7 @@ function App() {
                 <Form />
               </Route>
               <Route path="/item/:id">
-                <ItemDetailPage />
+                {/* <ItemDetailPage/> */}
               </Route>
               <Route path="/categories/:categoryId">
                 <Categories />
@@ -43,7 +43,7 @@ function App() {
             </Switch>
             <Footer />
           </CssBaseline>
-        </Router>
+        </Router> 
       </CartContext.Provider>
     </div>
   );

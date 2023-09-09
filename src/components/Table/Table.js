@@ -4,7 +4,7 @@ import "./Table.scss";
 
 const Table = () => {
   const { cart, setCart, setQnt } = useContext(CartContext);
-
+  
   const deleteProduct = (index) => {
     setCart(cart.filter((product, i) => i !== index));
   };
