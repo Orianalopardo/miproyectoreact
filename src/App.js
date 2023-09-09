@@ -6,12 +6,10 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 import Navbar from "./components/Navbar/";
 import Footer from "./components/Footer/Footer";
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home/";
 import Cart from "./pages/Cart/Cart";
-import ItemDetailPage from "./pages/ItemDetailPage/ItemDetailPage";
-import Categories from "./pages/Categories/Categories";
-import Form from "./pages/Form/Form";
-
+import Categories from "./pages/Categories";
+import Form from "./pages/Form/";
 import CartContext from "./contexts/cartContext";
 
 function App() {
